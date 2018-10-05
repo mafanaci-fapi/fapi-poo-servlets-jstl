@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
+
 @WebServlet(urlPatterns = "/controller")
 public class ControllerServlet extends HttpServlet {
 
@@ -39,9 +41,9 @@ public class ControllerServlet extends HttpServlet {
 			requestDispatcher.forward(req, resp);
 		} else if ("exemploFor".equalsIgnoreCase(acao)) {
 			List<String> nomes = new ArrayList<>();
-			nomes.add(req.getParameter("nome1"));
-			nomes.add(req.getParameter("nome2"));
-			nomes.add(req.getParameter("nome3"));
+			validarNomes(nomes,req.getParameter("nome1"));
+			validarNomes(nomes,req.getParameter("nome2"));
+			validarNomes(nomes,req.getParameter("nome3"));
 			req.setAttribute("nomes", nomes);
 			RequestDispatcher requestDispatcher = req.getRequestDispatcher("/WEB-INF/pages/jstl/exemplo_foreach.jsp");
 			requestDispatcher.forward(req, resp);
@@ -66,4 +68,10 @@ public class ControllerServlet extends HttpServlet {
 
 	}
 
+	private void validarNomes(List<String> nomes, String nome) {
+		if(StringUtils.isNotBlank(nome)) {
+			nomes.add(nome);
+		}
+	}
+	
 }

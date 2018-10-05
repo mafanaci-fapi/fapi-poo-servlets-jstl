@@ -4,8 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FAPI - Orientação a Objetos II - Servlets - Cadastro
-	Aluno</title>
+<title>FAPI - Orientação a Objetos II - Servlets - JSTL - Exemplo functions</title>
 </head>
 <body>
 	<div id="mensagem">

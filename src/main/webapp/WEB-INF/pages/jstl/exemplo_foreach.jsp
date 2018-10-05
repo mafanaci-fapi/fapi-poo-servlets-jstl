@@ -3,15 +3,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FAPI - Orientação a Objetos II - Servlets - Cadastro
-	Aluno</title>
+<title>FAPI - Orientação a Objetos II - Servlets - JSTL - Exemplo forEach</title>
 </head>
 <body>
 	<div id="mensagem">
-		<c:forEach var="nome" items="${nomes}">
-			<li>Nome: <c:out value="${nome}"/></li>
-		</c:forEach>
-
+		<table>
+			<tr>
+				<th>Nome</th>
+			</tr>
+			<tbody>
+				<c:forEach var="nome" items="${nomes}">
+					<tr>
+						<td><c:out value="${nome}" /></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 	<br />
 	<div id="voltarMain">

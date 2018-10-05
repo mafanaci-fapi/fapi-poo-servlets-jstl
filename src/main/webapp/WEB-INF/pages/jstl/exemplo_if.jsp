@@ -3,13 +3,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FAPI - Orientação a Objetos II - Servlets - Cadastro
-	Aluno</title>
+<title>FAPI - Orientação a Objetos II - Servlets - JSTL - Exemplo if</title>
 </head>
 <body>
 	<div id="mensagem">
 		<c:if test="${nome == 'Marcelo'}">
-			<p>Seu nome é:  <c:out value = "${valor}"/> portanto seu nome começa com M</p>
+			<p>Seu nome é:  <c:out value = "${nome}"/> portanto seu nome começa com M</p>
 		</c:if>
 		<c:if test="${nome != 'Marcelo'}">
 			<p>Seu nome não é Marcelo =/</p>
